@@ -167,3 +167,8 @@ a:hover {
 	color: #C00;
 	text-decoration: underline;
 }
+#page_center .titleframe1 ul li a:hover {
+	color: #FFF;
+	text-decoration: none;
+	background-color: #c00;
+}

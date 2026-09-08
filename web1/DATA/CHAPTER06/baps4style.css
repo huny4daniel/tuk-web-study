@@ -1,15 +1,14 @@
 @charset "utf-8";
-
 body {
 	font-family: "나눔고딕", "맑은 고딕", "돋움", Dotum, Verdana, Tahoma;
+	font-size: 9pt;
+	line-height:170%
+	color: #666;
 	background-image: url(images/topbg.jpg);
 	background-repeat: repeat-x;
 	background-position: top;
-	margin: 0px;
-	padding: 0px;
-	font-size: 9pt;
-	font-weight: bold;
-	line-height: 170%;
+	margin:0px;		
+	padding:0px;	
 }
 
 .wrap{
@@ -19,6 +18,12 @@ body {
 
 img{
 	border:0px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	padding:5px 0px 5px 0px;
+	margin: 0;
+	color: #666;
 }
 
 /*상단*/
@@ -168,7 +173,24 @@ img{
 	border-top-width: 1px;
 	border-top-style: solid;
 	border-top-color: #e3e3e3;	
-} 
+}
+
+
+.subtitle {
+	font-size: 12pt;
+	color: #ff780c;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.subtitle2 {
+	font-weight: bold;
+	color:#000000;
+}
+
+p {
+	line-height: 170%;
+}
+
 
 
 /*왼쪽메뉴*/
@@ -228,56 +250,4 @@ img{
 .page_footer{
 	padding:5px 0px 0px 0px;
 	text-align:right;
-}
-
-
-
-
-/*게시판 페이지*/
-
-
-
-.bigtitle{
-	float:left;
-}
-
-.smalltitle{
-	float:left;
-	margin:18px 0px 0px 10px;
-}
-
-.rightitle:after {
-	content:'';
-	display:block;
-	clear:both;
-}
-
-.roottext2{
-	clear:both;
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: #e3e3e3;	
-	margin:0px 0px 15px 0px;
-}
-
-
-
-#qaboard tr th {
-	background-image: url(images/tablebg.gif);
-	background-repeat: repeat-x;
-	border-top-width: 2px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	border-top-color: #7d838c;
-	border-bottom-color: #7d838c;
-	height: 26px;
-	vertical-align: middle;
-}
-#qaboard tr td {
-	vertical-align: middle;
-	height: 26px;
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #999;
 }

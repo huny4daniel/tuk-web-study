@@ -281,3 +281,23 @@ p {
 	border-top-color: #e3e3e3;	
 	margin:0px 0px 15px 0px;
 }
+#qaboard {
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-top-color: #ccc;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+}
+#qaboard tr th {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #fcc;
+}
+#qaboard tr td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-top-width: 1px;
+	border-top-style: dashed;
+	border-top-color: #ccc;
+}

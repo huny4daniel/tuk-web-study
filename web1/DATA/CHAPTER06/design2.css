@@ -282,3 +282,16 @@ img{
 	border-bottom-style: dotted;
 	border-bottom-color: #999;
 }
+.orangetitle {
+	font-size: 12pt;
+	font-weight: bold;
+	color: #f60;
+}
+.bluetitle {
+	font-size: 11pt;
+	font-weight: bold;
+	color: #00f;
+}
+.boldtitle {
+	font-weight: bold;
+}

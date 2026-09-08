@@ -159,3 +159,6 @@ a:link {
 .textbold{
 	font-weight:bold;
 }
+.testitalic {
+	font-style: italic;
+}
