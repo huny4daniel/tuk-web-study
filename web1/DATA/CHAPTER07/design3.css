@@ -88,3 +88,14 @@ a.rollover:hover img.over { display:inline; }
 	padding:0px;
 }
 
+.main {
+	clear: both;
+	float: left;
+	height: 320px;
+	width: 750px;
+}
+.bannerset {
+	float: left;
+	height: 320px;
+	width: 250px;
+}
