@@ -8,7 +8,7 @@
 }
 #page_header {
 	background-color: #fdf5d0;
-	height: 57px;
+	height: 75px;
 	width: 1012px;
 }
 #logo {
@@ -37,4 +37,46 @@
 	float: left;
 	height: 326px;
 	width: 1012px;
+}
+.banner1 {
+	float: left;
+	height: 267px;
+	width: 295px;
+	margin-top: 30px;
+	margin-left: 26px;
+}
+#footer {
+	height: 98px;
+	width: 1012px;
+	float: left;
+}
+#mytable {
+	float: right;
+	height: 200px;
+	margin-top: 80px;
+	margin-right: 50px;
+}
+#mytable tr th {
+	font-weight: bold;
+	background-color: #c6c6c6;
+	width: 150px;
+	font-size: 14pt;
+	border-top-color: #a1a1a1;
+	border-right-color: #a1a1a1;
+	border-bottom-color: #a1a1a1;
+	border-left-color: #a1a1a1;
+}
+input {
+	font-size: 14pt;
+	width: 150px;
+	margin-left: 30px;
+}
+
+#mytable tr td {
+	background-color: #d8d8d8;
+	text-align: center;
+	border-top-color: #a1a1a1;
+	border-right-color: #a1a1a1;
+	border-bottom-color: #a1a1a1;
+	border-left-color: #a1a1a1;
 }
