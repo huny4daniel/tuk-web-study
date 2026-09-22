@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>메뉴바 삽입</title>
 <link href="wingstyle.css" rel="stylesheet" type="text/css">
+<link href="../../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<script src="../../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -23,7 +25,39 @@
             
   </div>	
         
-        <div class="topnav">상단메뉴바 삽입</div>
+        <div class="topnav">
+          <ul id="MenuBar1" class="MenuBarHorizontal">
+            <li><a class="MenuBarItemSubmenu" href="#">OUTWEAR&amp;TOP</a>
+              <ul>
+                <li><a href="#">JACKET</a></li>
+                <li><a href="#">COAT</a></li>
+                <li><a href="#">CARDIGN</a></li>
+                <li><a href="#">TEE</a></li>
+                <li><a href="#">SHIRT</a></li>
+              </ul>
+            </li>
+            <li><a href="#" class="MenuBarItemSubmenu">PANTS&amp;SKIRT</a>
+              <ul>
+                <li><a href="#">PANTS</a></li>
+                <li><a href="#">무제 항목</a></li>
+              </ul>
+            </li>
+            <li><a class="MenuBarItemSubmenu" href="#">DRESS</a>
+              <ul>
+                <li><a class="MenuBarItemSubmenu" href="#">항목 3.1</a>
+                  <ul>
+                    <li><a href="#">항목 3.1.1</a></li>
+                    <li><a href="#">항목 3.1.2</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">항목 3.2</a></li>
+                <li><a href="#">항목 3.3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">BAG&amp;SHOES</a></li>
+            <li><a href="#">ACCESSORIES</a></li>
+          </ul>
+        </div>
 
 
 		<div class="mainimg"><img src="images/mainimg.jpg" width="896" height="380" alt="인기신상품">
@@ -81,6 +115,8 @@
 
 
 </div>
-
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"../../SpryAssets/SpryMenuBarDownHover.gif", imgRight:"../../SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
 </body>
 </html>

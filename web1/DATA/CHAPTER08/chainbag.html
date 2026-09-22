@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <title>ChainBag</title>
 <link href="style_chainbag.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+</script>
 </head>
 
 <body>
@@ -27,7 +36,7 @@
 
 <div class="topnav">
 	<ul>
-    	<li class="totalmenu"><a href="#">카테고리전체보기</a></li>
+    	<li class="totalmenu"><a href="#" onClick="MM_showHideLayers('showmenu','','show')">카테고리전체보기</a></li>
         <li><a href="#">OUTER</a></li>
         <li><a href="#">TOP</a></li>
         <li><a href="#">BOTTOM</a></li>
@@ -92,7 +101,7 @@
    	    <li> <a href="#">Muffler</a></li>
    	    <li> <a href="#">Belt</a></li>
       </ul>
-      <a href="#"><img src="images/closebtn.jpg" alt="close" width="68" height="23"></a>      
+      <a href="#"><img src="images/closebtn.jpg" alt="close" width="68" height="23" onClick="MM_showHideLayers('showmenu','','hide')"></a>      
     </div>
     
      <div class="mainimg"><img src="images/mainimg.jpg" width="999" height="376" alt="chainbag"></div>   

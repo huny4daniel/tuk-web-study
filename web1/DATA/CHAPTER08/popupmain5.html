@@ -5,13 +5,20 @@
 <title>POPUP Style</title>
 <link href="popstyle_main.css" rel="stylesheet" type="text/css">
 
+<script src="../SpryAssets/SpryEffects.js" type="text/javascript"></script>
+<script type="text/javascript">
+function MM_effectGrowShrink(targetElement, duration, from, to, toggle, referHeight, growFromCenter)
+{
+	Spry.Effect.DoGrow(targetElement, {duration: duration, from: from, to: to, toggle: toggle, referHeight: referHeight, growCenter: growFromCenter});
+}
+</script>
 </head>
 
-<body>
+<body onLoad="MM_effectGrowShrink('popup4style', 1000, '0%', '100%', false, false, true)">
 
 <div id="popup4style"><img src="popimg/popup4.jpg" alt="연휴영업안내" width="380" height="400" usemap="#Map3" border="0">
   <map name="Map3">
-    <area shape="rect" coords="151,372,238,402" href="#" alt="닫기">
+    <area shape="rect" coords="151,372,238,402" href="#" alt="닫기" onClick="MM_effectGrowShrink('popup4style', 1000, '100%', '0%', false, false, true)">
   </map>
 </div>
 <div class="wrap">
