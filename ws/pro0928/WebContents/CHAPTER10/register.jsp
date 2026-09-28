@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,7 +54,7 @@
     <div class="rightcon">
                 <img src="images/title1.jpg" width="464" height="58" alt="고객등록">
                 <div class="tablestyle">
-                  <form name="form1" method="post" action=""><table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
+                  <form name="form1" method="post" action="result2.jsp"><table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
   <tr>
     <th><label for="idfield">*  아이디</label></th>
     <td><input type="text" name="idfield" id="idfield"></td>

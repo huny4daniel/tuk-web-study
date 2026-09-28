@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,61 +53,36 @@
         
         </div>
     <div class="rightcon">
+    <% request.setCharacterEncoding("utf-8"); %>
                 <img src="images/title1.jpg" width="464" height="58" alt="고객등록">
                 <div class="tablestyle">
-                  <form name="form1" method="post" action=""><table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
+  <table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
   <tr>
     <th><label for="idfield">*  아이디</label></th>
-    <td><input type="text" name="idfield" id="idfield"></td>
+    <td>${param.idfield}</td>
   </tr>
   <tr>
     <th><label for="pwfield">* 비밀번호</label></th>
-    <td><input type="password" name="pwfield" id="pwfield"></td>
+    <td>${param.pwfield}</td>
   </tr>
   <tr>
-    <th rowspan="2"><label for="emailfield">* 이메일</label></th>
-    <td><input type="text" name="emailfield" id="emailfield">
-      @
-        <select name="mailsel" id="mailsel">
-          <option value="naver.com">naver.com</option>
-          <option value="daum.net">daum.net</option>
-          <option value="gmail.com">gmail.com</option>
-        </select></td>
-  </tr>
-  <tr>
-    <td><p>뉴스를 받으시겠습니까? 
-        <input name="radio" type="radio" id="letter_0" value="letter_0" checked>
-        수신동의 
-        <input type="radio" name="radio" id="letter_1" value="letter_1">
-        동의 안 함
-      </p></td>
+    <th><label for="emailfield">* 이메일</label></th>
+    <td>${param.emailfield}@${param.mailsel}</td>
   </tr>
   <tr>
     <th>* 관심정보</th>
     <td><p>
-      <label>
-        <input type="checkbox" name="info" value="피부관리" id="info_0">
-        피부관리</label>
-      <label>
-        <input type="checkbox" name="info" value="천연화장품" id="info_1">
-        천연화장품</label>
-      <label>
-        <input type="checkbox" name="info" value="피부나이측정" id="info_2">
-        피부나이측정</label>
-      <br>
-    </p></td>
+    <c:forEach var="info" items="${paramValues.info}">
+    	${info} :
+    </c:forEach>
+	<br>
+      </p></td>
   </tr>
   <tr>
     <th><label for="memo">* 메모</label></th>
-    <td><div>
-      <textarea name="memo" id="memo" cols="45" rows="5"></textarea>
-    </div></td>
+    <td><div>${param.memo}</div></td>
   </tr>
-  <tr>
-    <td height="30" colspan="2" align="center" class="btnstyle"><input type="image" name="sendbtn" id="sendbtn" src="images/btnimg.jpg"></td>
-  </tr>
-</table>
-                  </form>
+  </table>
                 </div>
          </div>
     </div>

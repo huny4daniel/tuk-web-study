@@ -4,6 +4,7 @@ body {
 	font-family: "나눔고딕", "맑은 고딕", "돋움", Dotum, Verdana, Tahoma;
 	font-size: 9pt;
 	line-height:170%
+	color: #666;
 	background-image: url(images/bg.jpg);
 	background-repeat: repeat-y;
 	background-position: 0px;
@@ -19,6 +20,7 @@ img{
 p, h1, h2, h3, h4, h5, h6 {
 	padding:5px 0px 5px 0px;
 	margin: 0;
+	color: #666;
 }.page_header {
 	width: 976px;
 	margin: 0px;
@@ -49,9 +51,8 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 .page_subimg{
-	clear: both;
-	width: 100%;
-	display: block;
+	clear:both;
+	width:100%;
 }
 .page_subimg .subimgline {
 	background-image: url(images/greenbar.jpg);
@@ -64,7 +65,6 @@ p, h1, h2, h3, h4, h5, h6 {
 	height: 183px;
 	background-image: url(images/subimg_bg.jpg);
 	background-repeat: repeat-x;
-	width: 100%;
 }
 
 
@@ -137,7 +137,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .page_content .rightcon {
 	float: left;
 	margin-top: 20px;
-	width: 700px;
+	width: 720px;
 }
 
 
@@ -184,11 +184,5 @@ p, h1, h2, h3, h4, h5, h6 {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
-input {
-	background-color: #dfe9d5;
-	border: 1px solid #ccc;
-}
-textarea {
-	background-color: #dfe9d5;
-	border: 1px solid #ccc;
-}
+
+
