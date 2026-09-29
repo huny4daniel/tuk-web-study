@@ -10,17 +10,17 @@
 		<servlet-class>my.util.Loader</servlet-class>
 		<init-param>
 			<param-name>jdbcdriver</param-name>
-			<param-value>com.mysql.cj.jdbc.Driver</param-value>
+			<param-value>com.mysql.jdbc.Driver</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
+	
 	<servlet>
 		<servlet-name>DBCPInit</servlet-name>
 		<servlet-class>my.util.DBCPInit</servlet-class>
 		<init-param>
 			<param-name>jdbcdriver</param-name>
-			<param-value>com.mysql.cj.jdbc.Driver</param-value>
+			<param-value>com.mysql.jdbc.Driver</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
