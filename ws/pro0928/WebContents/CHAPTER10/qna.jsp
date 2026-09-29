@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -52,7 +54,7 @@
         <div class="rightcon">
                 <img src="images/title2.jpg" width="464" height="58" alt="고객등록">
                 <div class="tablestyle">
-                  <form action="" method="post" enctype="multipart/form-data" name="form1">
+                  <form action="upload.jsp" method="post" enctype="multipart/form-data" name="form1">
                     <table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
                       <tr>
                         <th><label for="titlefield">* 제 목</label></th>
@@ -71,10 +73,11 @@
                       </tr>
                       <tr>
                         <th><label for="filefield">* 파일첨부</label></th>
-                        <td></td>
+                        <td><input type="file" name="filefield" id="filefield"></td>
                       </tr>
                       <tr>
-                        <td height="30" colspan="2" align="center" class="btnstyle">&nbsp;</td>
+                        <td height="30" colspan="2" align="center" class="btnstyle"><input type="submit" name="ok" id="ok" value="입력">
+                        <input type="reset" name="cancel" id="cancel" value="취소"></td>
                       </tr>
                     </table>
                   </form>
