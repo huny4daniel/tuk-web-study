@@ -18,7 +18,7 @@ public class UserDao {
 			pstmt.setString(1, user.getUserId());
 			pstmt.setString(2, user.getPassword());
 			pstmt.setString(3, user.getName());
-			pstmt.setTimestamp(4, new Timestamp(user.getLoginTime().getTime()));
+			pstmt.setTimestamp(4, new Timestamp(user.getRegisterTime().getTime()));
 			pstmt.executeUpdate(); 
 		} catch (SQLException e){
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class UserDao {
 				user.setUserId(rs.getString(1));
 				user.setPassword(rs.getString(2));
 				user.setName(rs.getString(3));
-				user.setLoginTime(rs.getTimestamp(4));
+				user.setRegisterTime(rs.getTimestamp(4));
 			}
 		} catch (SQLException e){
 			e.printStackTrace();
@@ -80,7 +80,7 @@ public class UserDao {
 				user.setUserId(rs.getString(1));
 				user.setPassword(rs.getString(2));
 				user.setName(rs.getString(3));
-				user.setLoginTime(rs.getTimestamp(4));
+				user.setRegisterTime(rs.getTimestamp(4));
 				users.add(user);
 			}
 		} catch (SQLException e){
@@ -156,7 +156,7 @@ public class UserDao {
 				user.setUserId(rs.getString(1));
 				user.setPassword(rs.getString(2));
 				user.setName(rs.getString(3));
-				user.setLoginTime(rs.getTimestamp(4));
+				user.setRegisterTime(rs.getTimestamp(4));
 				userList.add(user);
 			}
 		} finally {

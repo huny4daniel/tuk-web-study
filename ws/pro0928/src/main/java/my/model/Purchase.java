@@ -5,18 +5,17 @@ import java.util.Date;
 public class Purchase {
 	private int pid;
 	private String customer;
-	private int bookId;
+	private int movieId;
 	private int amount;
 	private int total;
 	private Date pdate;
 	
 	public Purchase() {}
 	
-	public Purchase(int pid, String customer, int bookId, int amount, int total, Date pdate) {
+	public Purchase(String customer, int movieId, int amount, int total, Date pdate) {
 		super();
-		this.pid = pid;
 		this.customer = customer;
-		this.bookId = bookId;
+		this.movieId = movieId;
 		this.amount = amount;
 		this.total = total;
 		this.pdate = pdate;
@@ -38,12 +37,12 @@ public class Purchase {
 		this.customer = customer;
 	}
 
-	public int getBookId() {
-		return bookId;
+	public int getMovieId() {
+		return movieId;
 	}
 
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
 
 	public int getAmount() {

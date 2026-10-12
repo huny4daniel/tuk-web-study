@@ -14,10 +14,10 @@ public class PurchaseDao {
 		PreparedStatement pstmt=null; 
 		try {
 			pstmt = conn.prepareStatement
-			("insert into purchase (customer,bookId,amount,total,pdate)"
+			("insert into purchase (customer,movieId,amount,total,pdate)"
 					+ " values(?,?,?,?,?)");
 			pstmt.setString(1, purchase.getCustomer());
-			pstmt.setInt(2, purchase.getBookId());
+			pstmt.setInt(2, purchase.getMovieId());
 			pstmt.setInt(3, purchase.getAmount());
 			pstmt.setInt(4, purchase.getTotal());
 			pstmt.setTimestamp(5, new Timestamp(purchase.getPdate().getTime()));
@@ -25,7 +25,7 @@ public class PurchaseDao {
 		} catch (SQLException e){
 			e.printStackTrace();
 		} finally {
-			//JdbcUtil.close(conn);
+			JdbcUtil.close(conn);
 			JdbcUtil.close(pstmt);
 		}
 	}
@@ -45,7 +45,7 @@ public class PurchaseDao {
 				Purchase purchase = new Purchase();
 				purchase.setPid(rs.getInt(1));
 				purchase.setCustomer(rs.getString(2));
-				purchase.setBookId(rs.getInt(3));
+				purchase.setMovieId(rs.getInt(3));
 				purchase.setAmount(rs.getInt(4));
 				purchase.setTotal(rs.getInt(5));
 				purchase.setPdate(rs.getTimestamp(6));

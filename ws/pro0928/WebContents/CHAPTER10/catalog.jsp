@@ -69,7 +69,8 @@
        
             <c:forEach var="movie" items="${list}">
             	<div class="catalogitem">
-                    <div class="poster"><a href="detail.jsp?movieId=${movie.movieId}"><img src="./myimages/${movie.poster}" width="200" height="250"></a></div>
+                    <div class="poster">
+                    <a href="detail.jsp?movieId=${movie.movieId}"><img src="./myimages/${movie.poster}" width="200" height="250"></a></div>
                     <div class="title">${movie.title}</div>
                 </div>
             </c:forEach>       
