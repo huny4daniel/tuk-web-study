@@ -6,7 +6,7 @@ public class User {
 	private String userId;
 	private String password;
 	private String name;
-	private Date loginTime;
+	private Date registerTime;
 	
 	
 	public String getUserId() {
@@ -27,11 +27,11 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getLoginTime() {
-		return loginTime;
+	public Date getRegisterTime() {
+		return registerTime;
 	}
-	public void setLoginTime(Date loginTime) {
-		this.loginTime = loginTime;
+	public void setRegisterTime(Date registerTime) {
+		this.registerTime = registerTime;
 	}
 	
 	

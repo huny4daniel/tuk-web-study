@@ -68,15 +68,17 @@
          %>
          <c:set var="movie" value="<%=movie%>"/>
        
-            		<div class="bigposter">여기에  class "bigposter"의 내용 입력</div>
+            		<div class="bigposter"><img src="./myimages/${movie.poster}" width="300" height="350"></div>
                   <div class="desc">
-                    <p>제목:</p>
-                    <p>제작사:</p>
-                    <p>가격:</p>
-                    <p>개봉일:</p>
+                  	<form action="purchase.jsp" method="post">
+                  	<input type="hidden" name="movieId" value="${movie.movieId}">
+                    <p>제목: ${movie.title}</p>
+                    <p>제작사: ${movie.maker}</p>
+                    <p>가격: ${movie.price}</p>
+                    <p>개봉일: ${movie.openDate}</p>
                     <p>수량:
                       <select name="amount" id="amount">
-                        <option value="1" selected>1개</option>
+                        <option value="1">1개</option>
                         <option value="2">2개</option>
                         <option value="3">3개</option>
                         <option value="4">4개</option>
@@ -86,10 +88,9 @@
                       <input type="submit" name="purchasebtn" id="purchasebtn" value="구매">
                       <input type="reset" name="btn" id="btn" value="취소">
                     </p>
+                    </form>
                   </div>
                 </div>
-                    <div class="poster"><img src="./myimages/${movie.poster}" width="200" height="250"></div>
-                    <div class="title">${movie.title}</div>
         </div>
     </div>
 

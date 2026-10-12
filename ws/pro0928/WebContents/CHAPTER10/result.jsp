@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.io.*,java.sql.*,my.util.*,my.dao.*,my.model.*,java.util.*" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -55,34 +57,18 @@
     <% request.setCharacterEncoding("utf-8"); %>
                 <img src="images/title1.jpg" width="464" height="58" alt="고객등록">
                 <div class="tablestyle">
-  <table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
-  <tr>
-    <th><label for="idfield">*  아이디</label></th>
-    <td><%= request.getParameter("idfield") %></td>
-  </tr>
-  <tr>
-    <th><label for="pwfield">* 비밀번호</label></th>
-    <td><%= request.getParameter("pwfield") %></td>
-  </tr>
-  <tr>
-    <th><label for="emailfield">* 이메일</label></th>
-    <td><%= request.getParameter("emailfield") %>@<%= request.getParameter("mailsel") %></td>
-  </tr>
-  <tr>
-    <th>* 관심정보</th>
-    <td><p>
-    <% String[] infos = request.getParameterValues("info"); 
-    	for (String info: infos) {
-    		out.print(info + " : ");
-    	}
-    %><br>
-      </p></td>
-  </tr>
-  <tr>
-    <th><label for="memo">* 메모</label></th>
-    <td><div><%= request.getParameter("memo") %></div></td>
-  </tr>
-  </table>
+                <% request.setCharacterEncoding("utf-8"); %>
+                <jsp:useBean id="user" class="my.model.User"/>
+                <jsp:setProperty property="*" name="user"/>
+                <%
+                	Connection conn = ConnectionProvider.getConnection();
+                	user.setRegisterTime(new java.util.Date());
+                	try {
+                		UserDao dao = new UserDao();
+                		dao.insert(conn, user);
+                	} catch (SQLException e) {}
+                %>
+                <%= user.getName() %> 등록이 완료되었습니다.
                 </div>
          </div>
     </div>
