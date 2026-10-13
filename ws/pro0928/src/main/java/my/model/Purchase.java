@@ -9,9 +9,9 @@ public class Purchase {
 	private int amount;
 	private int total;
 	private Date pdate;
-	
+
 	public Purchase() {}
-	
+
 	public Purchase(String customer, int movieId, int amount, int total, Date pdate) {
 		super();
 		this.customer = customer;
@@ -67,9 +67,5 @@ public class Purchase {
 
 	public void setPdate(Date pdate) {
 		this.pdate = pdate;
-	} 
-	
-	
-	
-
+	}
 }

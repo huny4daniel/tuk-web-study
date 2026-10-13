@@ -3,14 +3,14 @@ package my.model;
 import java.util.Date;
 
 public class Message {
-	private int messageId; 
+	private int messageId;
 	private String guestName;
 	private String password;
 	private String message;
 	private Date registerTime;
-	
-	public Message(){} 
-	
+
+	public Message(){}
+
 	public Message(int messageId, String guestName, String password,
 			String message, Date registerTime) {
 		super();
@@ -20,7 +20,7 @@ public class Message {
 		this.message = message;
 		this.registerTime = registerTime;
 	}
-	
+
 	public int getMessageId() {
 		return messageId;
 	}
@@ -50,8 +50,5 @@ public class Message {
 	}
 	public void setRegisterTime(Date registerTime) {
 		this.registerTime = registerTime;
-	} 
-	
-	
-
+	}
 }

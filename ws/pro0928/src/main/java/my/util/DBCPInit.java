@@ -15,9 +15,8 @@ public class DBCPInit extends HttpServlet {
 				String jdbcDriver = st.nextToken();
 				Class.forName(jdbcDriver);
 			}
-			
-			Class.forName("org.apache.commons.dbcp.PoolingDriver");
 
+			Class.forName("org.apache.commons.dbcp.PoolingDriver");
 		} catch(Exception ex) {
 			throw new ServletException(ex);
 		}

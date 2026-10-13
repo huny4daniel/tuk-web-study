@@ -9,12 +9,12 @@ import my.util.ConnectionProvider;
 import my.util.JdbcUtil;
 
 public class WriteMessageService {
-	
+
 	public void write(Message message){
-		Connection conn = null; 
+		Connection conn = null;
 		try {
-			conn = ConnectionProvider.getConnection(); 
-			MessageDao dao = new MessageDao(); 
+			conn = ConnectionProvider.getConnection();
+			MessageDao dao = new MessageDao();
 			dao.insert(conn, message);
 		} catch (SQLException e){
 			e.printStackTrace();
@@ -22,5 +22,4 @@ public class WriteMessageService {
 			JdbcUtil.close(conn);
 		}
 	}
-
 }

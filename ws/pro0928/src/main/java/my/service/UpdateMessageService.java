@@ -10,9 +10,9 @@ import my.util.JdbcUtil;
 
 public class UpdateMessageService {
 	public void updateMessage(int messageId, Message message, String password){
-		Connection conn = null; 
+		Connection conn = null;
 		try {
-			conn = ConnectionProvider.getConnection(); 
+			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false); //tranx 시작
 			MessageDao dao = new MessageDao();
 			Message message1 = dao.selectById(conn, messageId);
@@ -34,12 +34,4 @@ public class UpdateMessageService {
 			JdbcUtil.close(conn);
 		}
 	}
-
 }
-
-
-
-
-
-
-

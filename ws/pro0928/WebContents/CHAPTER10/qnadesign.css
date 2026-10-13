@@ -3,25 +3,25 @@
 body {
 	font-family: "나눔고딕", "맑은 고딕", "돋움", Dotum, Verdana, Tahoma;
 	font-size: 9pt;
-	line-height:170%
+	line-height: 170%;
 	color: #666;
 	background-image: url(images/bg.jpg);
 	background-repeat: repeat-y;
 	background-position: 0px;
-	margin:0px;		
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
 }
 
-
 img{
-	border:0px;
+	border: 0px;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-	padding:5px 0px 5px 0px;
+	padding: 5px 0px 5px 0px;
 	margin: 0;
 	color: #666;
-}.page_header {
+}
+.page_header {
 	width: 976px;
 	margin: 0px;
 	padding: 0px;
@@ -49,10 +49,9 @@ p, h1, h2, h3, h4, h5, h6 {
 	margin-left: 15px;
 }
 
-
 .page_subimg{
-	clear:both;
-	width:100%;
+	clear: both;
+	width: 100%;
 }
 .page_subimg .subimgline {
 	background-image: url(images/greenbar.jpg);
@@ -60,13 +59,11 @@ p, h1, h2, h3, h4, h5, h6 {
 	height: 10px;
 }
 
-
 .page_subimg .subimg {
 	height: 183px;
 	background-image: url(images/subimg_bg.jpg);
 	background-repeat: repeat-x;
 }
-
 
 .subimg #apDivSubimg {
 	background-image: url(images/subimg.jpg);
@@ -74,21 +71,19 @@ p, h1, h2, h3, h4, h5, h6 {
 	width: 1056px;
 }
 
-
 /*중앙레이아웃*/
 
 .page_content {
 	clear: both;
 	float: left;
-	width:976px;
+	width: 976px;
 }
 
 .page_content:after {
-	content:'';
-	display:block;
-	clear:both;
+	content: '';
+	display: block;
+	clear: both;
 }
-
 
 /*왼쪽메뉴*/
 .leftmenu {
@@ -131,7 +126,6 @@ p, h1, h2, h3, h4, h5, h6 {
 	background-position: 125px 4px;
 }
 
-
 /*오른쪽 내용*/
 
 .page_content .rightcon {
@@ -139,7 +133,6 @@ p, h1, h2, h3, h4, h5, h6 {
 	margin-top: 20px;
 	width: 700px;
 }
-
 
 #registerform {
 	border-top-width: 6px;
@@ -174,9 +167,9 @@ p, h1, h2, h3, h4, h5, h6 {
 .page_content .tablestyle {
 	float: left;
 	width: 680px;
-	text-align: center;	
+	text-align: center;
 	padding-top: 20px;
-	padding-bottom: 20px;	
+	padding-bottom: 20px;
 }
 
 #registerform tr .btnstyle {
@@ -184,5 +177,3 @@ p, h1, h2, h3, h4, h5, h6 {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
-
-

@@ -250,3 +250,11 @@ textarea {
 	pading-left: 40px;
 	text-align:left;
 }
+#orderview {
+	clear: both;
+	float: left;
+	height: 30px;
+	width: 400px;
+	margin-top: 20px;
+	margin-left: 100px;
+}

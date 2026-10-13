@@ -10,9 +10,9 @@ import my.util.JdbcUtil;
 
 public class DeleteMessageService {
 	public void deleteMessage(int messageId, String password){
-		Connection conn = null; 
+		Connection conn = null;
 		try {
-			conn = ConnectionProvider.getConnection(); 
+			conn = ConnectionProvider.getConnection();
 			conn.setAutoCommit(false); //tranx 시작
 			MessageDao dao = new MessageDao();
 			Message message = dao.selectById(conn, messageId);
@@ -34,12 +34,4 @@ public class DeleteMessageService {
 			JdbcUtil.close(conn);
 		}
 	}
-
 }
-
-
-
-
-
-
-

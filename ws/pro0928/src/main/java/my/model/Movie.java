@@ -9,7 +9,7 @@ public class Movie {
 	private int price;
 	private Date openDate;
 	private String poster;
-	
+
 	public Movie() {} //기본생성자
 
 	public Movie(String title, String maker, int price, Date openDate, String poster) {
@@ -68,7 +68,4 @@ public class Movie {
 	public void setPoster(String poster) {
 		this.poster = poster;
 	}
-	
-	
-
 }

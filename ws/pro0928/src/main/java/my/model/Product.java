@@ -5,7 +5,7 @@ public class Product {
 	private String name;
 	private int price;
 	private String maker;
-	
+
 	public int getProductId() {
 		return productId;
 	}
@@ -29,8 +29,5 @@ public class Product {
 	}
 	public void setMaker(String maker) {
 		this.maker = maker;
-	} 
-	
-	
-
+	}
 }

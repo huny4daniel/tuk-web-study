@@ -3,15 +3,15 @@ package my.model;
 import java.util.Date;
 
 public class Book {
-	private int bookId; 
+	private int bookId;
 	private String bookName;
 	private String author;
 	private int price;
 	private Date publishDate;
 	private String bookImage;
-	
+
 	public Book() {}
-	
+
 	public Book(int bookId, String bookName, String author, int price, Date publishDate, String bookImage) {
 		super();
 		this.bookId = bookId;
@@ -21,8 +21,6 @@ public class Book {
 		this.publishDate = publishDate;
 		this.bookImage = bookImage;
 	}
-
-
 
 	public String getBookImage() {
 		return bookImage;
@@ -59,8 +57,5 @@ public class Book {
 	}
 	public void setPublishDate(Date publishDate) {
 		this.publishDate = publishDate;
-	} 
-	
-	
-
+	}
 }
