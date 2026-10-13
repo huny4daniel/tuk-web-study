@@ -8,20 +8,20 @@ import my.model.Purchase;
 import my.util.JdbcUtil;
 
 public class PurchaseDao {
-	
-	public void insert(Connection conn, Purchase purchase) 
+
+	public void insert(Connection conn, Purchase purchase)
 			throws SQLException {
-		PreparedStatement pstmt=null; 
+		PreparedStatement pstmt=null;
 		try {
 			pstmt = conn.prepareStatement
-			("insert into purchase (customer,movieId,amount,total,pdate)"
+					("insert into purchase (customer,movieId,amount,total,pdate)"
 					+ " values(?,?,?,?,?)");
 			pstmt.setString(1, purchase.getCustomer());
 			pstmt.setInt(2, purchase.getMovieId());
 			pstmt.setInt(3, purchase.getAmount());
 			pstmt.setInt(4, purchase.getTotal());
 			pstmt.setTimestamp(5, new Timestamp(purchase.getPdate().getTime()));
-			pstmt.executeUpdate(); 
+			pstmt.executeUpdate();
 		} catch (SQLException e){
 			e.printStackTrace();
 		} finally {
@@ -29,17 +29,16 @@ public class PurchaseDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
-	
 
-	public List<Purchase> selectList(Connection conn) 
+	public List<Purchase> selectList(Connection conn)
 			throws SQLException {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<Purchase> purchaseList = null;
 		try {
 			pstmt = conn.prepareStatement
-					("select * from purchase ");			
-			rs  = pstmt.executeQuery(); 
+					("select * from purchase ");
+			rs = pstmt.executeQuery();
 			purchaseList = new ArrayList<Purchase>();
 			while (rs.next()){
 				Purchase purchase = new Purchase();
@@ -59,23 +58,3 @@ public class PurchaseDao {
 		return purchaseList;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -22,7 +22,7 @@ public class MessageListView {
 		this.endRow = endRow;
 		calculatePageTotalCount(); //여기서 페이지수 계산
 	}
-	
+
 	public void calculatePageTotalCount(){
 		if (messageTotalCount == 0) {
 			pageTotalCount = 0;
@@ -89,18 +89,8 @@ public class MessageListView {
 	public void setEndRow(int endRow) {
 		this.endRow = endRow;
 	}
-	
+
 	public boolean isEmpty(){
-		return messageTotalCount == 0;  //메시지수가 0이면 true를 리턴 
+		return messageTotalCount == 0;  //메시지수가 0이면 true를 리턴
 	}
 }
-
-
-
-
-
-
-
-
-
-

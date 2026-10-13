@@ -5,7 +5,7 @@ public class Cart {
 	private int bookId;
 	private int price;
 	private int amount;
-	
+
 	public Cart(String customer, int bookId, int price, int amount) {
 		super();
 		this.customer = customer;
@@ -45,7 +45,4 @@ public class Cart {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
-	
-
 }

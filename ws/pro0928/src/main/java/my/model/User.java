@@ -7,8 +7,7 @@ public class User {
 	private String password;
 	private String name;
 	private Date registerTime;
-	
-	
+
 	public String getUserId() {
 		return userId;
 	}
@@ -33,7 +32,4 @@ public class User {
 	public void setRegisterTime(Date registerTime) {
 		this.registerTime = registerTime;
 	}
-	
-	
-
 }
