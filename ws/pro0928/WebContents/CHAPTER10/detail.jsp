@@ -68,7 +68,7 @@
 
 				<div class="bigposter"><img src="./myimages/${movie.poster}" width="300" height="350"></div>
 				<div class="desc">
-					<form action="purchase.jsp" method="post">
+					<form name="frm" method="post">
 						<input type="hidden" name="movieId" value="${movie.movieId}">
 						<p>제목: ${movie.title}</p>
 						<p>제작사: ${movie.maker}</p>
@@ -83,11 +83,27 @@
 							</select>
 						</p>
 						<p>
-							<input type="submit" name="purchasebtn" id="purchasebtn" value="구매">
+							<input type="button" onclick="purchase(this.form)" value="구매">
+							<input type="button" onclick="putcart(this.form)" value="카트담기">
 							<input type="reset" name="btn" id="btn" value="취소">
 						</p>
 					</form>
 				</div>
+				
+				<script type="text/javascript">
+					function purchase(frm){
+						var amount = frm.amount.value.trim();
+						var movieId = frm.movieId.value.trim();
+						//location.href='purchase.jsp?bookId='+id+'&amount='+amount;
+						window.open("purchase.jsp?movieId="+movieId+"&amount="+amount,"","width=500, height=300");
+					}
+					function putcart(frm){
+						var amount = frm.amount.value.trim();
+						var movieId = frm.movieId.value.trim(); 
+						window.open("putCart.jsp?movieId="+movieId+"&amount="+amount,"","width=500, height=300");
+					}
+				</script>
+				
 			</div>
 		</div>
 	</div>

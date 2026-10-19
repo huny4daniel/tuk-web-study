@@ -2,15 +2,13 @@ package my.model;
 
 public class Cart {
 	private String customer;
-	private int bookId;
-	private int price;
+	private int movieId;
 	private int amount;
-
-	public Cart(String customer, int bookId, int price, int amount) {
+	
+	public Cart(String customer, int movieId, int amount) {
 		super();
 		this.customer = customer;
-		this.bookId = bookId;
-		this.price = price;
+		this.movieId = movieId;
 		this.amount = amount;
 	}
 
@@ -22,20 +20,12 @@ public class Cart {
 		this.customer = customer;
 	}
 
-	public int getBookId() {
-		return bookId;
+	public int getMovieId() {
+		return movieId;
 	}
 
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
 
 	public int getAmount() {
@@ -45,4 +35,5 @@ public class Cart {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+	
 }
