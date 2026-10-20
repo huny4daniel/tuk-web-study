@@ -27,6 +27,27 @@ public class UserDao {
 			JdbcUtil.close(pstmt);
 		}
 	}
+	
+	public boolean idCheck(Connection conn, String userId)
+			throws SQLException {
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement ("select * from user where userId = ?");
+			pstmt.setString(1, userId);
+			rs = pstmt.executeQuery();
+			if (rs.next()){
+				return true;
+			}
+		} catch (SQLException e){
+			e.printStackTrace();
+		} finally {
+			JdbcUtil.close(conn);
+			JdbcUtil.close(pstmt);
+			JdbcUtil.close(rs);
+		}
+		return false;
+	}
 
 	public User selectById(Connection conn, String userId)
 			throws SQLException {

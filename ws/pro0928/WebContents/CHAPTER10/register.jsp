@@ -52,11 +52,14 @@
 		<div class="rightcon">
 			<img src="images/title1.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
-				<form name="form1" method="post" action="result.jsp">
+				<form name="fr" onsubmit="return check();" method="post" action="result.jsp">
 					<table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
 						<tr>
 							<th><label for="idfield">*  아이디</label></th>
-							<td><input type="text" name="userId" id="idfield"></td>
+							<td>
+								<input type="text" name="userId" id="idfield">
+								<input type="button" value="중복확인" class="dup" onclick="winopen()">
+							</td>
 						</tr>
 						<tr>
 							<th><label for="pwfield">* 비밀번호</label></th>
@@ -74,5 +77,30 @@
 			</div>
 		</div>
 	</div>
+<script type="text/javascript">
+function check(){ 
+	//아이디가 입력이 안되어있을 경우 아이디입력하라는 메세지 출력
+	if (document.fr.userId.value == "" || document.fr.userId.value.length < 0) { 
+		alert("아이디를 입력해주세요")
+		history.back()
+		document.fr.userId.focus();
+		return false;
+	}
+}
+
+function winopen(){
+	//새창을 열어서 페이지를 오픈 후 -> 회원아이디정보를 가지고 중복체크
+	//1. 아이디가 없으면 알림창과 진행x
+	if (document.fr.userId.value =="" || document.fr.userId.value.length < 0) {
+		alert("아이디를 먼저 입력해주세요")
+		document.fr.userId.focus();
+	}
+	else {
+		//2. 회원정보아이디를 가지고 있는 지 체크하려면 DB에 접근해야한다.
+		//자바스크립트로 어떻게 DB에 접근할까? => 파라미터로 id값을 가져가서 jsp페이지에서 진행하면 된다.
+		window.open("joinIdCheck.jsp?userId="+document.fr.userId.value,"","width=500, height=300");
+	}
+}
+</script>
 </body>
 </html>

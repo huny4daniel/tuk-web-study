@@ -68,7 +68,12 @@
 						Purchase purchase = new Purchase("huny4daniel", movieId, amount, movie.getPrice()*amount, new java.util.Date());
 						PurchaseDao pDao = new PurchaseDao();
 						pDao.insert(conn2, purchase);
-					} catch (SQLException e) {}
+					} 
+					catch (SQLException e) {
+					}
+					finally {
+						JdbcUtil.close(conn);
+					}
 				%>
 				<c:set var="movie" value="<%=movie%>"/>
 

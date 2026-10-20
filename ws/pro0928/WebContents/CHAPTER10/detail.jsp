@@ -62,7 +62,12 @@
 					try {
 						MovieDao dao = new MovieDao();
 						movie = dao.selectById(conn, movieId);
-					} catch (SQLException e) {}
+					} 
+					catch (SQLException e) {
+					}
+					finally {
+						JdbcUtil.close(conn);
+					}
 				%>
 				<c:set var="movie" value="<%=movie%>"/>
 

@@ -27,20 +27,43 @@
 		 }
 		 
 	%>   
-		<b><center> 당신이 지금까지 선택한 영화 목록입니다</center></b>
-		<br><br>
-		<hr><br><br>
-	<%   
-	  	String movies = "";
-		Cart cart = null;
-		
-	  	for(int i=1; i<= movieCount.intValue(); i++) {
-	    	cart = (Cart)session.getAttribute("movie" + i);
-	    	movies += cart.getMovieId()+":"+cart.getAmount()+"<br>";
-	  	}
-	  	
-	  	out.println(movies);
-	%>
+	
+	<b><center> 당신이 지금까지 선택한 영화 목록입니다</center></b>
+	<br><br>
+	<hr><br><br>
+	
+  	<table border = 1 style="width: 300px;">
+	  	<tr>
+	  		<th>아이디</th><th>이미지</th><th>수량</th>
+	  	</tr>
+		<%   
+		  	Movie movie = null;
+			Cart cart = null;
+			Connection conn = ConnectionProvider.getConnection();
+			
+			try {
+			  	MovieDao dao = new MovieDao();
+			  	
+				for (int i = 1; i <= movieCount.intValue(); i++) {
+			    	cart = (Cart)session.getAttribute("movie" + i);
+			    	movie = dao.selectById(conn, cart.getMovieId());
+		%>
+			<c:set var="movie" value="<%= movie %>"/>
+			<tr>
+				<td>${movie.movieId}</td>
+				<td><img src="./myimages/${movie.poster}" width="50" height="60"></td>
+				<td><%= cart.getAmount() %></td>
+			</tr>
+		<%	    	
+			  	}
+			}
+			catch (SQLException e) {
+			}
+		  	finally {
+		  		JdbcUtil.close(conn);
+		  	}
+		%>
+	</table>
 	<hr>
 	<a href= "cart.jsp"> 처음으로 돌아가기 </a>&nbsp;  
 	<a href= "cartdelete.jsp"> 카트 비우기 </a>
