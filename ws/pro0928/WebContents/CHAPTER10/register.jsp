@@ -52,7 +52,7 @@
 		<div class="rightcon">
 			<img src="images/title1.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
-				<form name="fr" onsubmit="return check();" method="post" action="result.jsp">
+				<form name="fr" onsubmit="return check() && checkForm(form)" method="post" action="result.jsp">
 					<table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
 						<tr>
 							<th><label for="idfield">*  아이디</label></th>
@@ -64,6 +64,9 @@
 						<tr>
 							<th><label for="pwfield">* 비밀번호</label></th>
 							<td><input type="password" name="password" id="pwfield"></td>
+						</tr><tr>
+							<th><label for="pwfield">* 비밀번호 체크</label></th>
+							<td><input type="password" name="password2" id="pwfield"></td>
 						</tr>
 						<tr>
 							<th><label for="namefield">* 이름</label></th>
@@ -86,6 +89,38 @@ function check(){
 		document.fr.userId.focus();
 		return false;
 	}
+	return true;
+}
+
+﻿function checkPasswordPattern(str) {
+    var pattern1 = /[0-9]/;           // 숫자
+    var pattern2 = /[a-zA-Z]/;        // 문자
+    var pattern3 = /[~!@#$%^&*()_+|<>?:{}]/; // 특수문자
+    if (!pattern1.test(str) || !pattern2.test(str) || !pattern3.test(str) || str.length < 8) {
+        alert("비밀번호는 8자리 이상, 문자·숫자·특수문자를 모두 포함해야 합니다.");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function checkForm(frm) {
+    var pw = frm.password.value.trim();
+    var pw2 = frm.password2.value.trim();
+
+    if (!checkPasswordPattern(pw)) {
+        frm.password.focus();
+        return false;
+    }
+
+    if (pw != pw2) {
+        alert("비밀번호가 일치하지 않습니다.");
+        frm.password2.focus();
+        return false;
+    }
+
+    alert("회원가입이 완료되었습니다!");
+    frm.submit();
 }
 
 function winopen(){
