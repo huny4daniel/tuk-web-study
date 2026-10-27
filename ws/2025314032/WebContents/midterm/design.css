@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+body {
+	font-family: "나눔고딕", "맑은 고딕", "돋움", Dotum, Verdana, Tahoma;
+	font-size: 11pt;
+	line-height: 170%;
+	color: #2f3b36;
+	background-color: #f4f4ef;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+img {
+	border: 0px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	padding: 5px 0px 5px 0px;
+	margin: 0;
+}
+
+
+.page_subimg {
+	clear: both;
+	width: 1200px;
+	display: block;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.page_subimg .subimgline {
+	background-color: #1a3a38;
+	height: 0px;
+}
+
+
+.page_subimg .subimg {
+	height: 192px;
+	background-color: #1a3a38;
+	width: 100%;
+}
+
+
+.subimg #apDivSubimg {
+	background-image: url(images/head.png);
+	background-repeat: no-repeat;
+	background-size: 1200px 192px;
+	height: 192px;
+	width: 1200px;
+}
+
+
+/*중앙레이아웃*/
+
+.page_content {
+	clear: both;
+	width: 1200px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	background-color: #FFF;
+}
+
+.page_content:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+/*왼쪽메뉴*/
+.leftmenu {
+	clear: both;
+	float: left;
+	width: 229px;
+	min-height: 700px;
+	background-color: #fafaf8;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #ebece6;
+}
+
+
+/*오른쪽 내용*/
+
+.page_content .rightcon {
+	float: left;
+	margin-top: 20px;
+	margin-left: 40px;
+	width: 890px;
+}
+
+
+#registerform {
+	border: 1px solid #d5dccf;
+	border-collapse: collapse;
+}
+
+#registerform th {
+	height: 66px;
+	padding-left: 22px;
+	width: 220px;
+	text-align: left;
+	color: #1f2b27;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d5dccf;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #d5dccf;
+	background-color: #eef3ea;
+}
+#registerform tr td {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d5dccf;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 18px;
+	text-align: left;
+	font-size: 9pt;
+	color: #77807a;
+}
+
+.page_content .tablestyle {
+	float: left;
+	width: 890px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+#registerform tr .btnstyle {
+	text-align: center;
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+input {
+	width: 600px;
+	height: 40px;
+	padding-left: 14px;
+	font-size: 11pt;
+	background-color: #FFF;
+	border: 1px solid #ccd3c8;
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+#registerform tr .btnstyle input {
+	width: auto;
+	height: 58px;
+	padding: 0px;
+	margin-right: 4px;
+	margin-left: 4px;
+	border: 0px;
+	vertical-align: middle;
+}
+.tablestyle #mylist {
+	width: 890px;
+	border-collapse: collapse;
+}
+.tablestyle #mylist tr th {
+	height: 56px;
+	padding-left: 14px;
+	text-align: left;
+	color: #1f2b27;
+	background-color: #eef3ea;
+	border-bottom: 1px solid #d5dccf;
+}
+.tablestyle #mylist tr td {
+	height: 96px;
+	padding-left: 14px;
+	text-align: left;
+	border-bottom: 1px solid #e3e7df;
+}
