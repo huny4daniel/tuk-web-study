@@ -18,9 +18,10 @@
 		
 		String movieId = request.getParameter("movieId");
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		String loginId = (String)session.getAttribute("LOGIN");
 		
 		if(movieId != null) {
-			Cart cart = new Cart("huny4daniel", Integer.parseInt(movieId), amount); 
+			Cart cart = new Cart(loginId, Integer.parseInt(movieId), amount); 
 			movieCount = new Integer(movieCount.intValue() +1);
 		   	session.setAttribute("movie"+movieCount, cart);
 		   	session.setAttribute("movieCount", movieCount);   

@@ -251,3 +251,10 @@ textarea {
 	margin-top: 20px;
 	margin-left: 100px;
 }
+#greeting {
+	clear: both;
+	float: right;
+	height: 20px;
+	width: 300px;
+	margin-top: 5px;
+}

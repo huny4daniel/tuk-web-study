@@ -50,11 +50,29 @@
 				<li><a href="#">적립금내역</a></li>
 			</ul>
 		</div>
-
+		<%
+			String pageNumberStr = request.getParameter("page");
+			int pageNumber = 1;
+			if (pageNumberStr != null) {
+				pageNumber = Integer.parseInt(pageNumberStr);
+			}
+			Connection conn = ConnectionProvider.getConnection();
+			MovieListView viewData = null;
+			
+			try {
+				MovieDao dao = new MovieDao();
+				viewData = dao.getMovieList(conn, pageNumber);
+			}
+			catch(SQLException e) {}
+		%>
+		
 		<div class="rightcon">
-			<% request.setCharacterEncoding("utf-8"); %>
+			<% request.setCharacterEncoding("utf-8");
+				String loginId = (String)session.getAttribute("LOGIN");
+			%>
 			<img src="images/title1.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
+				<div id="greeting"><%= loginId %>님 안녕하세요</div>
 				<%
 					Connection conn = ConnectionProvider.getConnection();
 					List<Movie> list = null;
@@ -77,6 +95,7 @@
 						정렬 기준:
 						<label for="target"></label>
 						<select name="target" id="target">
+							<option value="freq">선호도</option>
 							<option value="title">제목</option>
 							<option value="maker">제작사</option>
 							<option value="price">가격</option>
@@ -85,8 +104,8 @@
 						정렬 순서:
 						<label for="direct"></label>
 						<select name="direct" id="direct">
-							<option value="asc">오름차순</option>
 							<option value="desc">내림차순</option>
+							<option value="asc">오름차순</option>
 						</select>
 						<input type="submit" name="btn" id="btn" value="보기">
 					</form>

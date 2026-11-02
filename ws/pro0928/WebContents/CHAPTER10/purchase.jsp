@@ -57,17 +57,18 @@
 			<div class="tablestyle">
 				<%
 					Connection conn = ConnectionProvider.getConnection();
-					Connection conn2 = ConnectionProvider.getConnection();
 					int movieId = Integer.parseInt(request.getParameter("movieId"));
 					int amount = Integer.parseInt(request.getParameter("amount"));
+					String loginId = (String)session.getAttribute("LOGIN");
 					Movie movie = null;
 
 					try {
 						MovieDao dao = new MovieDao();
 						movie = dao.selectById(conn, movieId);
-						Purchase purchase = new Purchase("huny4daniel", movieId, amount, movie.getPrice()*amount, new java.util.Date());
+						Purchase purchase = new Purchase(loginId, movieId, amount, movie.getPrice()*amount, new java.util.Date());
 						PurchaseDao pDao = new PurchaseDao();
-						pDao.insert(conn2, purchase);
+						dao.updateFreq(conn, movieId);
+						pDao.insert(conn, purchase);
 					} 
 					catch (SQLException e) {
 					}

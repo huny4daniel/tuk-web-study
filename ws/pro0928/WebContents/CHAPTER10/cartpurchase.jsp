@@ -56,47 +56,49 @@
 			<img src="images/title1.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
 				<%
-					Integer movieCount = (Integer)session.getAttribute("movieCount");
-					List<Movie> movies = new ArrayList<Movie>();
+					Connection conn = ConnectionProvider.getConnection();
+					int movieCount = 0;
+					if (session.getAttribute("movieCount") != null) {
+						movieCount = (int)session.getAttribute("movieCount");
+					}
 
-					if (movieCount != null) {
-						MovieDao dao = new MovieDao();
-						PurchaseDao pDao = new PurchaseDao();
-						for (int i = 1; i <= movieCount.intValue(); i++) {
-							Cart cart = (Cart)session.getAttribute("movie" + i);
-							if (cart == null) continue;
-							Connection conn = null;
-							Connection conn2 = null;
-							try {
-								// selectById와 insert는 커넥션을 닫지 않으므로 finally에서 직접 닫음
-								conn = ConnectionProvider.getConnection();
-								Movie movie = dao.selectById(conn, cart.getMovieId());
-								Purchase purchase = new Purchase(cart.getCustomer(), cart.getMovieId(), cart.getAmount(), movie.getPrice()*cart.getAmount(), new java.util.Date());
-								conn2 = ConnectionProvider.getConnection();
-								pDao.insert(conn2, purchase);
-								movies.add(movie);
-							}
-							catch (SQLException e) {
-							}
-							finally {
-								JdbcUtil.close(conn);
-								JdbcUtil.close(conn2);
+					Movie movie = null;
+					int movieId = 0, amount = 0, price = 0;
+					String customer = null;
+					if (movieCount != 0) {
+						try {
+							MovieDao dao = new MovieDao();
+							PurchaseDao pDao = new PurchaseDao();
+							for (int i = 1; i <= movieCount; i++) {
+								Cart cart = (Cart)session.getAttribute("movie" + i);
+								movieId = cart.getMovieId();
+								movie = dao.selectById(conn, movieId);
+
+								customer = cart.getCustomer();
+								amount = cart.getAmount();
+								Purchase purchase = new Purchase(customer, movieId, amount, movie.getPrice()*amount, new java.util.Date());
+
+								pDao.insert(conn, purchase);
+								dao.updateFreq(conn, movieId);
 							}
 						}
-							for (int i = 1; i <= movieCount; i++) {
-								session.removeAttribute("movie" + i);
-							}
-						session.removeAttribute("movieCount");
+						catch (SQLException e) {
+						}
+						finally {
+							JdbcUtil.close(conn);
+						}
 					}
+					else {
 				%>
-				<c:set var="movies" value="<%=movies%>"/>
+						장바구니가 비어있습니다.
+				<%
+					}
+					for (int i = 1; i <= movieCount; i++) {
+						session.removeAttribute("movie" + i);
+					}
+					session.removeAttribute("movieCount");
+				%>
 
-				<c:forEach var="movie" items="${movies}">
-					<div class="catalogitem">
-						<img src="./myimages/${movie.poster}" width="150" height="200">
-						<p>${movie.title}</p>
-					</div>
-				</c:forEach>
 				<div class="desc">
 					구매가 완료되었습니다. 감사합니다.
 				</div>

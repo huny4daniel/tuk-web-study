@@ -9,16 +9,26 @@ public class Movie {
 	private int price;
 	private Date openDate;
 	private String poster;
+	private int freq;
 
 	public Movie() {} //기본생성자
 
-	public Movie(String title, String maker, int price, Date openDate, String poster) {
+	public Movie(String title, String maker, int price, Date openDate, String poster, int freq) {
 		super();
 		this.title = title;
 		this.maker = maker;
 		this.price = price;
 		this.openDate = openDate;
 		this.poster = poster;
+		this.freq = freq;
+	}
+
+	public int getFreq() {
+		return freq;
+	}
+
+	public void setFreq(int freq) {
+		this.freq = freq;
 	}
 
 	public int getMovieId() {
