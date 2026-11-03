@@ -71,7 +71,7 @@
 								response.sendRedirect("list.jsp");
 							}
 							else {
-								response.sendRedirect("catalog.jsp");
+								response.sendRedirect("catalogPaging.jsp");
 							}
 						}
 						else {

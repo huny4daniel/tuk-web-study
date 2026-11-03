@@ -17,7 +17,7 @@ public class MovieDao {
 		try {
 			pstmt = conn.prepareStatement
 					("insert into movie (title,maker,price,openDate,poster, freq)"
-					+ " values(?,?,?,?,?)");
+					+ " values(?,?,?,?,?,?)");
 			pstmt.setString(1, movie.getTitle());
 			pstmt.setString(2, movie.getMaker());
 			pstmt.setInt(3, movie.getPrice());
@@ -188,7 +188,7 @@ public class MovieDao {
 			rs.next();
 			return rs.getInt(1);
 		} finally {
-			JdbcUtil.close(conn);
+			// JdbcUtil.close(conn);
 			JdbcUtil.close(rs);
 		}
 	}

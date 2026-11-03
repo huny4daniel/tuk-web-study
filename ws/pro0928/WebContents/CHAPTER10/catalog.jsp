@@ -50,21 +50,6 @@
 				<li><a href="#">적립금내역</a></li>
 			</ul>
 		</div>
-		<%
-			String pageNumberStr = request.getParameter("page");
-			int pageNumber = 1;
-			if (pageNumberStr != null) {
-				pageNumber = Integer.parseInt(pageNumberStr);
-			}
-			Connection conn = ConnectionProvider.getConnection();
-			MovieListView viewData = null;
-			
-			try {
-				MovieDao dao = new MovieDao();
-				viewData = dao.getMovieList(conn, pageNumber);
-			}
-			catch(SQLException e) {}
-		%>
 		
 		<div class="rightcon">
 			<% request.setCharacterEncoding("utf-8");

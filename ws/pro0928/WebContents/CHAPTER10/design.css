@@ -258,3 +258,11 @@ textarea {
 	width: 300px;
 	margin-top: 5px;
 }
+#paging {
+	clear: both;
+	float: left;
+	height: 20px;
+	width: 300px;
+	margin-top: 50px;
+	margin-left: 200px;
+}
