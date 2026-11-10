@@ -14,7 +14,7 @@ import com.google.gson.JsonParser;
 public class OllamaClient {
 
     private static final String API_URL =
-            "http://220.149.119.234:31434/api/generate";
+            "http://localhost:11435/api/generate";
 
     private static final String MODEL = "gemma3:12b";
 
