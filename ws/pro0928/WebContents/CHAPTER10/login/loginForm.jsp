@@ -5,22 +5,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>고객등록 신청서</title>
-<link href="design.css" rel="stylesheet" type="text/css">
+<link href="../design.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 	<div class="page_header">
 		<div class="toplogo">
-			<a href="#"><img src="images/top_logo.jpg" width="276" height="40" alt="beautifullife"></a>
+			<a href="#"><img src="../images/top_logo.jpg" width="276" height="40" alt="beautifullife"></a>
 		</div>
 		<div class="topnav">
 			<ul>
-				<li><a href="#"><img src="images/top_menu1.jpg" width="72" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu2.jpg" width="76" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu3.jpg" width="64" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu4.jpg" width="134" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu5.jpg" width="99" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu6.jpg" width="52" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu1.jpg" width="72" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu2.jpg" width="76" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu3.jpg" width="64" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu4.jpg" width="134" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu5.jpg" width="99" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu6.jpg" width="52" height="24" alt="ArtStory"></a></li>
 			</ul>
 		</div>
 	</div>
@@ -34,7 +34,7 @@
 
 	<div class="page_content">
 		<div class="leftmenu">
-			<img src="images/left_title.jpg" width="152" height="24" alt="membership">
+			<img src="../images/left_title.jpg" width="152" height="24" alt="membership">
 			<ul>
 				<li></li>
 				<li><a href="#">회원가입</a></li>
@@ -50,7 +50,7 @@
 		</div>
 
 		<div class="rightcon">
-			<img src="images/title1.jpg" width="464" height="58" alt="고객등록">
+			<img src="../images/title1.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
 				<form name="form1" method="post" action="login.jsp">
 					<table width="680" border="0" cellpadding="0" cellspacing="0" id="registerform">
@@ -66,7 +66,7 @@
 							<td><input type="password" name="password" id="pwfield"></td>
 						</tr>
 						<tr>
-							<td height="30" colspan="2" align="center" class="btnstyle"><input type="image" name="sendbtn" id="sendbtn" src="images/btnimg.jpg"></td>
+							<td height="30" colspan="2" align="center" class="btnstyle"><input type="image" name="sendbtn" id="sendbtn" src="../images/btnimg.jpg"></td>
 						</tr>
 					</table>
 				</form>

@@ -13,16 +13,16 @@
 <body>
 	<div class="page_header">
 		<div class="toplogo">
-			<a href="#"><img src="images/top_logo.jpg" width="276" height="40" alt="beautifullife"></a>
+			<a href="#"><img src="../images/top_logo.jpg" width="276" height="40" alt="beautifullife"></a>
 		</div>
 		<div class="topnav">
 			<ul>
-				<li><a href="#"><img src="images/top_menu1.jpg" width="72" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu2.jpg" width="76" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu3.jpg" width="64" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu4.jpg" width="134" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu5.jpg" width="99" height="24" alt="ArtStory"></a></li>
-				<li><a href="#"><img src="images/top_menu6.jpg" width="52" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu1.jpg" width="72" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu2.jpg" width="76" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu3.jpg" width="64" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu4.jpg" width="134" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu5.jpg" width="99" height="24" alt="ArtStory"></a></li>
+				<li><a href="#"><img src="../images/top_menu6.jpg" width="52" height="24" alt="ArtStory"></a></li>
 			</ul>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 
 	<div class="page_content">
 		<div class="leftmenu">
-			<img src="images/left_title.jpg" width="152" height="24" alt="membership">
+			<img src="../images/left_title.jpg" width="152" height="24" alt="membership">
 			<ul>
 				<li></li>
 				<li><a href="#">회원가입</a></li>
@@ -53,7 +53,7 @@
 
 		<div class="rightcon">
 			<% request.setCharacterEncoding("utf-8"); %>
-			<img src="images/title1.jpg" width="464" height="58" alt="고객등록">
+			<img src="../images/title1.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
 				<% request.setCharacterEncoding("utf-8"); %>
 				<jsp:useBean id="user" class="my.model.User"/>
@@ -68,10 +68,10 @@
 							session.setAttribute("LOGIN", user.getUserId());
 
 							if (user.getUserId().equals("admin")) {
-								response.sendRedirect("list.jsp");
+								response.sendRedirect("../list.jsp");
 							}
 							else {
-								response.sendRedirect("catalogPaging.jsp");
+								response.sendRedirect("../catalogPaging.jsp");
 							}
 						}
 						else {
