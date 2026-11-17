@@ -64,7 +64,7 @@
 					String maker = multi.getParameter("maker");
 					int price = Integer.parseInt(multi.getParameter("price"));
 					String poster = multi.getFilesystemName("poster");
-					Movie movie = new Movie(title,maker,price,new java.util.Date(),poster);
+					Movie movie = new Movie(title,maker,price,new java.util.Date(),poster, 0);
 					movie.setMovieId(movieId);
 					Connection conn = ConnectionProvider.getConnection();
 					try {

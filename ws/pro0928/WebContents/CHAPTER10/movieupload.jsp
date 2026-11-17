@@ -57,13 +57,14 @@
 			<img src="images/title2.jpg" width="464" height="58" alt="고객등록">
 			<div class="tablestyle">
 				<%
-					MultipartRequest multi = new MultipartRequest(request, "C:\\DevProjects\\TUKorea\\tukorea-study\\2026_2\\web-programming\\ws\\pro0928\\WebContents\\CHAPTER10\\myimages", 5*1024*1024, "utf-8", new DefaultFileRenamePolicy());
+					String uploadPath = application.getRealPath("/CHAPTER10/myimages");
+					MultipartRequest multi = new MultipartRequest(request, uploadPath, 5*1024*1024, "utf-8", new DefaultFileRenamePolicy());
 
 					String title = multi.getParameter("title");
 					String maker = multi.getParameter("maker");
 					int price = Integer.parseInt(multi.getParameter("price"));
 					String poster = multi.getFilesystemName("poster");
-					Movie movie = new Movie(title,maker,price,new java.util.Date(),poster);
+					Movie movie = new Movie(title,maker,price,new java.util.Date(),poster, 0);
 					Connection conn = ConnectionProvider.getConnection();
 					try {
 						MovieDao dao = new MovieDao();

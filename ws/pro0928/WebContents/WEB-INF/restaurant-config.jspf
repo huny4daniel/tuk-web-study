@@ -1,0 +1,21 @@
+<%@ page import="java.sql.*" %>
+<%!
+    private static final String KAKAO_JS_KEY = "6ee560a86c1b43a4626c134569c436be";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/web";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "12345";
+
+    private Connection openRestaurantDb() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+    }
+
+    private String html(String value) {
+        return value.replace("&", "&amp;").replace("<", "&lt;")
+            .replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+    }
+
+    private boolean validCoordinate(double value, double limit) {
+        return Double.isFinite(value) && value >= -limit && value <= limit;
+    }
+%>
